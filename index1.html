@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.2/browser.min.js"></script>
+</head>
+<body>
+    <script type="text/babel">
+        //Global
+        var a = 10;
+        function logA() {
+            console.log(a) //10
+        }
+        logA();
+        console.log(a); //10
+
+        //Function
+        function logB() {
+            var b = 100;
+            console.log(b); //100
+        }
+        logB();
+       // console.log(b);  // b is undefined
+
+        //Lack of block scope, hoistig var c
+        var c = 99;
+        if(true) {
+            var c = 100;
+            console.log(c); //100
+        }
+
+        console.log(c); //100
+
+        //let, has block scope
+        if(true) {
+            let d = 200;
+            console.log(d); // 200
+            if(true) {
+                console.log(d); // 200
+            }
+        }
+
+        console.log(d); //d is undefined
+
+    </script>
+</body>
+</html>
